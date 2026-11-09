@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <header>
+    <span class="etiqueta">Experimento científico • Química</span>
+    <h1>Pilha de Coca-Cola <span class="raio">⚡</span></h1>
+    <p>Como um refrigerante pode ajudar a gerar eletricidade?</p>
+  </header>
+
+  <main>
+
+    <!-- ========== RESUMO: ELETRICIDADE ========== -->
+    <section id="eletricidade">
+      <h2>O que é eletricidade?</h2>
+      <p>
+        Eletricidade é a energia gerada pelo movimento (ou pelo acúmulo) de <strong>cargas elétricas</strong>.
+        Tudo ao nosso redor é feito de átomos, e dentro deles existem os <strong>elétrons</strong>,
+        partículas com carga negativa. Quando esses elétrons se movimentam de forma organizada por um
+        material condutor, como um fio, temos a <strong>corrente elétrica</strong>.
+      </p>
+
+      <div class="grade">
+        <div class="cartao">
+          <span class="icone">🔋</span>
+          <h3>Tensão (volts)</h3>
+          <p>É a "força" que empurra os elétrons. Quanto maior a tensão, maior o empurrão.</p>
+        </div>
+        <div class="cartao">
+          <span class="icone">🌊</span>
+          <h3>Corrente (ampères)</h3>
+          <p>É a quantidade de elétrons que passam pelo fio a cada segundo.</p>
+        </div>
+        <div class="cartao">
+          <span class="icone">🚧</span>
+          <h3>Resistência (ohms)</h3>
+          <p>É a dificuldade que o material impõe à passagem da corrente.</p>
+        </div>
+      </div>
+
+      <div class="destaque">
+        <p>📐 <strong>1ª Lei de Ohm:</strong> <code class="codigo-escuro">U = R · i</code>
+        (tensão = resistência × corrente)</p>
+      </div>
+
+      <p>
+        Materiais <strong>condutores</strong> (cobre, zinco, alumínio) deixam os elétrons passarem
+        com facilidade. Os <strong>isolantes</strong> (borracha, plástico, madeira seca) dificultam essa passagem.
+        A eletricidade pode vir de várias fontes: usinas hidrelétricas, painéis solares, geradores,
+        e também de <strong>reações químicas</strong>, como acontece nas pilhas e baterias.
+      </p>
+    </section>
+
+    <!-- ========== O EXPERIMENTO ========== -->
+    <section id="experimento">
+      <h2>O experimento</h2>
+      <p>
+        A <strong>pilha de Coca-Cola</strong> é um experimento que mostra, na prática, como uma
+        reação química pode produzir energia elétrica. O refrigerante funciona como
+        <strong>eletrólito</strong>: um líquido que contém íons e permite a movimentação das cargas
+        entre dois metais diferentes.
+      </p>
+      <p>
+        A Coca-Cola é ácida (contém ácido fosfórico e ácido carbônico), e isso ajuda muito na
+        reação com os metais.
+      </p>
+
+      <div class="cartao">
+        <div class="diagrama">
+          <div class="copo">
+            <div class="eletrodo zinco"></div>
+            <div class="eletrodo cobre"></div>
+          </div>
+        </div>
+        <p class="legenda">Esquema simplificado: zinco (−) à esquerda, cobre (+) à direita, mergulhados na Coca-Cola.</p>
+      </div>
+    </section>
+
+    <!-- ========== MATERIAIS ========== -->
+    <section id="materiais">
+      <h2>Materiais utilizados</h2>
+      <div class="cartao">
+        <ul>
+          <li>Coca-Cola (pode ser em temperatura ambiente)</li>
+          <li>Copos descartáveis (um para cada pilha)</li>
+          <li>Placas ou pregos de <strong>zinco</strong> (ex.: prego galvanizado)</li>
+          <li>Placas, fios ou moedas de <strong>cobre</strong></li>
+          <li>Fios com garras jacaré</li>
+          <li>Multímetro (para medir a tensão)</li>
+          <li>LED ou calculadora/relógio digital pequeno (para testar)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== PASSO A PASSO ========== -->
+    <section id="passos">
+      <h2>Passo a passo</h2>
+      <div class="cartao">
+        <ol>
+          <li>Coloque Coca-Cola em cada copo, enchendo até cerca da metade.</li>
+          <li>Mergulhe uma placa de zinco e uma de cobre em cada copo, sem que se encostem.</li>
+          <li>Com o multímetro, meça a tensão de uma pilha.</li>
+          <li>Ligue os copos em <strong>série</strong>: o cobre de um copo no zinco do próximo.</li>
+          <li>Conecte as pontas livres ao LED ou ao aparelho e observe o resultado.</li>
+          <li>Anote as medições à medida que adiciona mais copos.</li>
+        </ol>
+      </div>
+
+    </section>
+
+    <!-- ========== A QUÍMICA ========== -->
+    <section id="quimica">
+      <h2>O que acontece na química?</h2>
+      <p>
+        É uma reação de <strong>oxirredução</strong>: um metal perde elétrons (oxida) e outra
+        espécie ganha elétrons (reduz). Os elétrons saem de um lado, percorrem o fio e chegam ao
+        outro, e é esse caminho que forma a corrente elétrica.
+      </p>
+
+      <div class="grade">
+        <div class="cartao">
+          <h3>⬅️ Zinco (ânodo, polo −)</h3>
+          <p>Oxida e libera elétrons:</p>
+          <p><code>Zn → Zn²⁺ + 2e⁻</code></p>
+        </div>
+        <div class="cartao">
+          <h3>➡️ Cobre (cátodo, polo +)</h3>
+          <p>Recebe os elétrons, e os íons H⁺ do refrigerante são reduzidos:</p>
+          <p><code>2H⁺ + 2e⁻ → H₂</code></p>
+        </div>
+      </div>
+
+      <div class="destaque">
+        <p>💡 Uma única pilha gera pouca tensão (em geral algo próximo de 1 V). Por isso ligamos
+        vários copos em série: as tensões se somam e o LED consegue acender.</p>
+      </div>
+    </section>
+
+    <!-- ========== CONCLUSÃO ========== -->
+    <section id="conclusao">
+      <h2>Conclusão</h2>
+      <p>
+        O experimento mostra que a energia química pode ser transformada em energia elétrica.
+        Com materiais simples e baratos, é possível montar uma pilha funcional e entender o
+        princípio de funcionamento das pilhas e baterias que usamos todos os dias.
+        Também vimos que ligar pilhas em série aumenta a tensão total.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Pilha de Coca-Cola</strong> • Trabalho de Química</p>
+    <p>Nome do aluno • Turma • Professor(a) • 2026</p>
+  </footer>
+
+</body>
+</html>
