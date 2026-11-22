@@ -1,163 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pilha de Coca-Cola</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header>
-    <span class="etiqueta">Experimento científico • Química</span>
-    <h1>Pilha de Coca-Cola <span class="raio">⚡</span></h1>
-    <p>Como um refrigerante pode ajudar a gerar eletricidade?</p>
-  </header>
+<header>
+  <span class="tag">Experimento científico • Química</span>
+  <h1>Pilha de Coca-Cola ⚡</h1>
+  <p>Como um refrigerante pode ajudar a gerar eletricidade? Clique, brinque e descubra!</p>
+</header>
+<main>
 
-  <main>
+<section>
+  <h2>O que é eletricidade? 🔌</h2>
+  <p>Eletricidade é a energia do movimento das <strong>cargas elétricas</strong>. Tudo é feito de átomos, e dentro deles existem os <strong>elétrons</strong>. Quando eles andam em fila por um fio, temos a <strong>corrente elétrica</strong>.</p>
+  <p><em>👆 Toque nos cartões para ver uma comparação divertida:</em></p>
+  <div class="grid">
+    <button class="flip" data-a="💪 É a força que empurra os elétrons. Quanto maior a tensão, maior o empurrão!" data-b="🚰 Imagine uma caixa d’água bem alta: quanto mais alta, mais forte a água sai."><b>⚡ Tensão (volts)</b><span>Toque para descobrir</span></button>
+    <button class="flip" data-a="🌊 É a quantidade de elétrons que passam pelo fio a cada segundo." data-b="🚰 Seria a quantidade de água que passa pelo cano em cada segundo."><b>🌊 Corrente (ampères)</b><span>Toque para descobrir</span></button>
+    <button class="flip" data-a="🚧 É a dificuldade que o material impõe à passagem da corrente." data-b="🚰 Seria um cano bem estreito: a água passa com mais dificuldade."><b>🚧 Resistência (ohms)</b><span>Toque para descobrir</span></button>
+  </div>
+  <div class="hl">📐 <strong>1ª Lei de Ohm:</strong> <code>U = R · i</code> (tensão = resistência × corrente)</div>
 
-    <!-- ========== RESUMO: ELETRICIDADE ========== -->
-    <section id="eletricidade">
-      <h2>O que é eletricidade?</h2>
-      <p>
-        Eletricidade é a energia gerada pelo movimento (ou pelo acúmulo) de <strong>cargas elétricas</strong>.
-        Tudo ao nosso redor é feito de átomos, e dentro deles existem os <strong>elétrons</strong>,
-        partículas com carga negativa. Quando esses elétrons se movimentam de forma organizada por um
-        material condutor, como um fio, temos a <strong>corrente elétrica</strong>.
-      </p>
+  <div class="card">
+    <h3>🏃 Corrida dos elétrons</h3>
+    <div class="track" id="track"><i>−</i><i style="animation-delay:-.4s">−</i><i style="animation-delay:-.8s">−</i><i style="animation-delay:-1.2s">−</i><i style="animation-delay:-1.6s">−</i><i style="animation-delay:-2s">−</i><i style="animation-delay:-2.4s">−</i></div>
+    <div class="row" style="margin-top:12px">
+      <button id="tgl">▶️ Ligar a corrente</button>
+      <label>🐢 <input type="range" id="spd" min="1" max="5" value="3"> 🐇</label>
+    </div>
+  </div>
 
-      <div class="grade">
-        <div class="cartao">
-          <span class="icone">🔋</span>
-          <h3>Tensão (volts)</h3>
-          <p>É a "força" que empurra os elétrons. Quanto maior a tensão, maior o empurrão.</p>
-        </div>
-        <div class="cartao">
-          <span class="icone">🌊</span>
-          <h3>Corrente (ampères)</h3>
-          <p>É a quantidade de elétrons que passam pelo fio a cada segundo.</p>
-        </div>
-        <div class="cartao">
-          <span class="icone">🚧</span>
-          <h3>Resistência (ohms)</h3>
-          <p>É a dificuldade que o material impõe à passagem da corrente.</p>
-        </div>
-      </div>
+  <div class="card">
+    <h3>🔍 Condutor ou isolante?</h3>
+    <div id="sort"></div>
+    <p class="fb" id="sortfb"></p>
+  </div>
+</section>
 
-      <div class="destaque">
-        <p>📐 <strong>1ª Lei de Ohm:</strong> <code class="codigo-escuro">U = R · i</code>
-        (tensão = resistência × corrente)</p>
-      </div>
+<section>
+  <h2>O experimento 🥤</h2>
+  <p>O refrigerante funciona como <strong>eletrólito</strong>: um líquido com íons que deixa as cargas se movimentarem entre dois metais diferentes. A Coca-Cola é ácida (ácido fosfórico e ácido carbônico), e isso ajuda na reação.</p>
 
-      <p>
-        Materiais <strong>condutores</strong> (cobre, zinco, alumínio) deixam os elétrons passarem
-        com facilidade. Os <strong>isolantes</strong> (borracha, plástico, madeira seca) dificultam essa passagem.
-        A eletricidade pode vir de várias fontes: usinas hidrelétricas, painéis solares, geradores,
-        e também de <strong>reações químicas</strong>, como acontece nas pilhas e baterias.
-      </p>
-    </section>
+  <div class="card">
+    <h3>🧪 Monte a sua pilha!</h3>
+    <p style="margin-top:0">Cada copo tem um zinco e um cobre. Adicione copos ligados em série e veja a tensão crescer (cerca de 1 V por copo, aproximadamente).</p>
+    <div class="cups" id="cups"></div>
+    <div class="volt" id="volt">0 V</div>
+    <div class="led" id="led">💡</div>
+    <p class="fb" id="ledfb"></p>
+    <div class="row">
+      <button class="alt" id="minus">➖ Tirar copo</button>
+      <button id="plus">➕ Colocar copo</button>
+    </div>
+  </div>
+</section>
 
-    <!-- ========== O EXPERIMENTO ========== -->
-    <section id="experimento">
-      <h2>O experimento</h2>
-      <p>
-        A <strong>pilha de Coca-Cola</strong> é um experimento que mostra, na prática, como uma
-        reação química pode produzir energia elétrica. O refrigerante funciona como
-        <strong>eletrólito</strong>: um líquido que contém íons e permite a movimentação das cargas
-        entre dois metais diferentes.
-      </p>
-      <p>
-        A Coca-Cola é ácida (contém ácido fosfórico e ácido carbônico), e isso ajuda muito na
-        reação com os metais.
-      </p>
+<section>
+  <h2>Materiais ✅</h2>
+  <div class="card">
+    <div class="bar"><div id="bar"></div></div>
+    <p id="prog" style="margin:6px 0 10px;color:var(--mut)">Marque o que você já separou: 0 de 7</p>
+    <label class="ck"><input type="checkbox"> Coca-Cola (pode ser em temperatura ambiente)</label>
+    <label class="ck"><input type="checkbox"> Copos descartáveis (um para cada pilha)</label>
+    <label class="ck"><input type="checkbox"> Placas ou pregos de <strong>zinco</strong> (ex.: prego galvanizado)</label>
+    <label class="ck"><input type="checkbox"> Placas, fios ou moedas de <strong>cobre</strong></label>
+    <label class="ck"><input type="checkbox"> Fios com garras jacaré</label>
+    <label class="ck"><input type="checkbox"> Multímetro (para medir a tensão)</label>
+    <label class="ck"><input type="checkbox"> LED ou calculadora/relógio digital pequeno</label>
+  </div>
+</section>
 
-      <div class="cartao">
-        <div class="diagrama">
-          <div class="copo">
-            <div class="eletrodo zinco"></div>
-            <div class="eletrodo cobre"></div>
-          </div>
-        </div>
-        <p class="legenda">Esquema simplificado: zinco (−) à esquerda, cobre (+) à direita, mergulhados na Coca-Cola.</p>
-      </div>
-    </section>
+<section>
+  <h2>Passo a passo 👣</h2>
+  <div class="card">
+    <div class="bar"><div id="sbar"></div></div>
+    <p id="step" style="font-size:1.15rem;font-weight:700;margin:12px 0"></p>
+    <div class="row"><button class="alt" id="prev">⬅️ Voltar</button><button id="next">Próximo ➡️</button></div>
+  </div>
+</section>
 
-    <!-- ========== MATERIAIS ========== -->
-    <section id="materiais">
-      <h2>Materiais utilizados</h2>
-      <div class="cartao">
-        <ul>
-          <li>Coca-Cola (pode ser em temperatura ambiente)</li>
-          <li>Copos descartáveis (um para cada pilha)</li>
-          <li>Placas ou pregos de <strong>zinco</strong> (ex.: prego galvanizado)</li>
-          <li>Placas, fios ou moedas de <strong>cobre</strong></li>
-          <li>Fios com garras jacaré</li>
-          <li>Multímetro (para medir a tensão)</li>
-          <li>LED ou calculadora/relógio digital pequeno (para testar)</li>
-        </ul>
-      </div>
-    </section>
+<section>
+  <h2>O que acontece na química? 🔬</h2>
+  <p>Pense assim: o <strong>zinco</strong> é bem “generoso” e adora soltar elétrons. Esses elétrons correm pelo fio até o <strong>cobre</strong>. Essa corrida pelo fio é a <strong>eletricidade</strong>! 🏃⚡</p>
+  <p>Lá no cobre, o ácido da Coca-Cola recebe os elétrons e solta <strong>bolhinhas de gás</strong>. Por isso o zinco vai se desgastando devagarzinho.</p>
+  <details class="card"><summary><b>🤓 Para quem quer saber mais</b></summary><p>Essa troca de elétrons se chama <strong>oxirredução</strong>.<br>No zinco: <code>Zn → Zn²⁺ + 2e⁻</code><br>No cobre: <code>2H⁺ + 2e⁻ → H₂</code></p></details>
+  <div class="grid">
+    <button class="flip" data-a="🎁 O zinco solta elétrons, como quem distribui balinhas!" data-b="É o lado negativo (−): de onde os elétrons saem para o fio."><b>⬅️ Zinco (lado −)</b><span>Toque para descobrir</span></button>
+    <button class="flip" data-a="🧺 O cobre recebe os elétrons, e o ácido da Coca-Cola solta bolhinhas de gás." data-b="É o lado positivo (+): para onde os elétrons chegam."><b>➡️ Cobre (lado +)</b><span>Toque para descobrir</span></button>
+  </div>
+  <div class="hl">💡 Uma única pilha gera pouca tensão (algo próximo de 1 V). Por isso ligamos vários copos em série: as tensões se somam e o LED consegue acender.</div>
 
-    <!-- ========== PASSO A PASSO ========== -->
-    <section id="passos">
-      <h2>Passo a passo</h2>
-      <div class="cartao">
-        <ol>
-          <li>Coloque Coca-Cola em cada copo, enchendo até cerca da metade.</li>
-          <li>Mergulhe uma placa de zinco e uma de cobre em cada copo, sem que se encostem.</li>
-          <li>Com o multímetro, meça a tensão de uma pilha.</li>
-          <li>Ligue os copos em <strong>série</strong>: o cobre de um copo no zinco do próximo.</li>
-          <li>Conecte as pontas livres ao LED ou ao aparelho e observe o resultado.</li>
-          <li>Anote as medições à medida que adiciona mais copos.</li>
-        </ol>
-      </div>
+  <div class="card">
+    <h3>🧮 Calculadora da Lei de Ohm</h3>
+    <div class="row"><label>Resistência: <b id="rv">10</b> Ω <input type="range" id="r" min="1" max="50" value="10"></label></div>
+    <div class="row"><label>Corrente: <b id="iv">0,5</b> A <input type="range" id="i" min="1" max="20" value="5"></label></div>
+    <div class="volt" id="u">U = 5 V</div>
+  </div>
+</section>
 
-    </section>
+<section>
+  <h2>Quiz do cientista 🧠</h2>
+  <div class="card" id="quiz"></div>
+</section>
 
-    <!-- ========== A QUÍMICA ========== -->
-    <section id="quimica">
-      <h2>O que acontece na química?</h2>
-      <p>
-        É uma reação de <strong>oxirredução</strong>: um metal perde elétrons (oxida) e outra
-        espécie ganha elétrons (reduz). Os elétrons saem de um lado, percorrem o fio e chegam ao
-        outro, e é esse caminho que forma a corrente elétrica.
-      </p>
+<section>
+  <h2>Conclusão 🏆</h2>
+  <p>A energia química pode ser transformada em energia elétrica. Com materiais simples e baratos, é possível montar uma pilha que funciona e entender como pilhas e baterias trabalham. E ligar pilhas em série aumenta a tensão total!</p>
+  <div class="row"><button id="party">🎉 Comemorar!</button></div>
+</section>
 
-      <div class="grade">
-        <div class="cartao">
-          <h3>⬅️ Zinco (ânodo, polo −)</h3>
-          <p>Oxida e libera elétrons:</p>
-          <p><code>Zn → Zn²⁺ + 2e⁻</code></p>
-        </div>
-        <div class="cartao">
-          <h3>➡️ Cobre (cátodo, polo +)</h3>
-          <p>Recebe os elétrons, e os íons H⁺ do refrigerante são reduzidos:</p>
-          <p><code>2H⁺ + 2e⁻ → H₂</code></p>
-        </div>
-      </div>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+function confetti(n=24){const e=["🎉","⚡","🥤","⭐","🔋","✨"];for(let k=0;k<n;k++){const s=document.createElement("span");s.className="conf";s.textContent=e[k%e.length];s.style.left=(30+Math.random()*40)+"vw";s.style.top="40vh";s.style.setProperty("--x",(Math.random()*400-200)+"px");s.style.setProperty("--y",(Math.random()*400-100)+"px");document.body.appendChild(s);setTimeout(()=>s.remove(),1500)}}
+$("#party").onclick=()=>confetti(40);
 
-      <div class="destaque">
-        <p>💡 Uma única pilha gera pouca tensão (em geral algo próximo de 1 V). Por isso ligamos
-        vários copos em série: as tensões se somam e o LED consegue acender.</p>
-      </div>
-    </section>
+// cartões que viram
+document.querySelectorAll(".flip").forEach(b=>{let st=0;const sp=b.querySelector("span");b.onclick=()=>{st=(st+1)%3;sp.textContent=st==0?"Toque para descobrir":st==1?b.dataset.a:b.dataset.b}});
 
-    <!-- ========== CONCLUSÃO ========== -->
-    <section id="conclusao">
-      <h2>Conclusão</h2>
-      <p>
-        O experimento mostra que a energia química pode ser transformada em energia elétrica.
-        Com materiais simples e baratos, é possível montar uma pilha funcional e entender o
-        princípio de funcionamento das pilhas e baterias que usamos todos os dias.
-        Também vimos que ligar pilhas em série aumenta a tensão total.
-      </p>
-    </section>
+// elétrons
+const tr=$("#track"),tg=$("#tgl"),sd=$("#spd");
+function spd(){tr.style.setProperty("--t",(6-sd.value)*1.2+"s")}spd();sd.oninput=spd;
+tg.onclick=()=>{const on=tr.classList.toggle("on");tg.textContent=on?"⏸️ Desligar a corrente":"▶️ Ligar a corrente"};
 
-  </main>
+// condutor ou isolante
+const items=[["🟠 Cobre",1],["🧱 Borracha",0],["⚪ Zinco",1],["🪵 Madeira seca",0],["🥫 Alumínio",1],["🧴 Plástico",0]];
+let acc=0,done=0;
+items.forEach(([n,c])=>{const d=document.createElement("div");d.className="sort";d.innerHTML=`<b>${n}</b><span><button class="alt">⚡ Condutor</button> <button>🛑 Isolante</button></span><span class="r"></span>`;
+const [b1,b2]=d.querySelectorAll("button");
+const go=g=>{if(d.dataset.d)return;d.dataset.d=1;done++;const ok=g==c;if(ok)acc++;d.querySelector(".r").textContent=ok?"✅ Acertou!":"❌ Era "+(c?"condutor":"isolante");b1.disabled=b2.disabled=true;$("#sortfb").textContent=`Acertos: ${acc} de ${done}`;if(done==items.length&&acc==done){$("#sortfb").textContent="🏅 Perfeito! Você acertou todos!";confetti()}};
+b1.onclick=()=>go(1);b2.onclick=()=>go(0);$("#sort").appendChild(d)});
 
-  <footer>
-    <p><strong>Pilha de Coca-Cola</strong> • Trabalho de Química</p>
-    <p>Nome do aluno • Turma • Professor(a) • 2026</p>
-  </footer>
+// copos
+let n=0;
+function cups(){$("#cups").innerHTML=n?Array.from({length:n},()=>"<span>🥤</span>").join(""):"<span style='font-size:1rem;color:var(--mut)'>Nenhum copo ainda. Clique em ➕</span>";
+$("#volt").textContent=n+" V";const led=$("#led");
+led.style.opacity=n<3?.35:n<5?.7:1;led.style.filter=n<3?"grayscale(1)":n<5?"drop-shadow(0 0 8px #ffb703)":"drop-shadow(0 0 22px #ffb703)";
+$("#ledfb").textContent=n==0?"Sem copos, sem energia.":n<3?"Ainda é pouco para o LED acender… coloque mais copos!":n<5?"💡 O LED acendeu fraquinho!":"🌟 Brilhando forte! Em série, as tensões se somam."}
+$("#plus").onclick=()=>{if(n<6){n++;cups();if(n==3||n==6)confetti(14)}};
+$("#minus").onclick=()=>{if(n>0){n--;cups()}};cups();
 
+// checklist
+const ck=[...document.querySelectorAll(".ck input")];
+ck.forEach(c=>c.onchange=()=>{const k=ck.filter(x=>x.checked).length;$("#bar").style.width=k/ck.length*100+"%";$("#prog").textContent=k==ck.length?"🎉 Tudo pronto! Vamos ao experimento!":`Marque o que você já separou: ${k} de ${ck.length}`;if(k==ck.length)confetti()});
+
+// passo a passo
+const S=["Coloque Coca-Cola em cada copo, enchendo até cerca da metade. 🥤","Mergulhe uma placa de zinco e uma de cobre em cada copo, sem que se encostem. 🔩","Com o multímetro, meça a tensão de uma pilha. 📏","Ligue os copos em série: o cobre de um copo no zinco do próximo. 🔗","Conecte as pontas livres ao LED ou ao aparelho e observe o resultado. 💡","Anote as medições à medida que adiciona mais copos. 📝"];
+let p=0;function step(){$("#step").textContent=`Passo ${p+1} de ${S.length}: ${S[p]}`;$("#sbar").style.width=(p+1)/S.length*100+"%";$("#prev").disabled=p==0;$("#next").textContent=p==S.length-1?"Terminei! 🎉":"Próximo ➡️"}
+$("#prev").onclick=()=>{if(p>0){p--;step()}};
+$("#next").onclick=()=>{if(p<S.length-1){p++;step()}else confetti(30)};step();
+
+// Lei de Ohm
+function ohm(){const r=+$("#r").value,i=$("#i").value/10;$("#rv").textContent=r;$("#iv").textContent=String(i).replace(".",",");$("#u").textContent="U = "+(r*i).toFixed(1).replace(".",",")+" V"}
+$("#r").oninput=$("#i").oninput=ohm;ohm();
+
+// quiz
+const Q=[["O que a Coca-Cola faz no experimento?",["Eletrólito, permite o movimento das cargas","Dá cor ao LED","Esfria o zinco"],0],["Qual metal é o polo negativo (−)?",["Cobre","Zinco","Borracha"],1],["Por que ligamos os copos em série?",["Para o LED ficar mais bonito","Para as tensões se somarem","Para gastar mais refrigerante"],1],["Qual destes é isolante?",["Alumínio","Cobre","Madeira seca"],2]];
+let qi=0,sc=0;
+function quiz(){const q=$("#quiz");if(qi>=Q.length){q.innerHTML=`<div class="volt">${sc>=3?"🏆":"📚"} ${sc} de ${Q.length}</div><p class="fb">${sc==Q.length?"Você é um cientista de verdade!":"Boa tentativa! Releia a página e tente de novo."}</p><div class="row"><button id="rs">🔁 Jogar de novo</button></div>`;$("#rs").onclick=()=>{qi=0;sc=0;quiz()};if(sc==Q.length)confetti(40);return}
+const [t,o,c]=Q[qi];q.innerHTML=`<p style="margin-top:0"><b>Pergunta ${qi+1}/${Q.length}:</b> ${t}</p>`+o.map((x,k)=>`<button class="opt" data-k="${k}">${x}</button>`).join("")+`<p class="fb" id="qf"></p>`;
+q.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{const k=+b.dataset.k;q.querySelectorAll(".opt").forEach(x=>x.disabled=true);q.querySelector(`[data-k="${c}"]`).classList.add("right");if(k==c){sc++;$("#qf").textContent="✅ Isso mesmo!";confetti(12)}else{b.classList.add("wrong");$("#qf").textContent="❌ Quase! A resposta certa está em verde."}
+setTimeout(()=>{qi++;quiz()},1600)})}
+quiz();
+</script>
 </body>
 </html>
